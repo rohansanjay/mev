@@ -54,7 +54,7 @@ They offer two free services for MEV data: [mev-inspect](**mev-inspect-py**) and
 
 ### Using mev-inspect
 
-[mev-inspect](https://docs.flashbots.net/flashbots-data/mev-inspect-py/overview) is an MEV inspector for Ethereum, that finds miner payments, tokens transfers and profit, swaps and arbitrages, and more for any given block. The data is stored in a Postgres instance on a local Kubernetes cluster. To set up mev-insepct on your local machine, follow the instructions below: 
+[mev-inspect](https://docs.flashbots.net/flashbots-data/mev-inspect-py/overview) is a Flashbots tool for analyzing historical mev activity on-chain, that finds miner payments, tokens transfers and profit, swaps and arbitrages, and more for any given block. The data is stored in a Postgres instance on a local Kubernetes cluster. To set up mev-insepct on your local machine, follow the instructions below: 
 
 1. Clone the [mev-inspect-py](https://github.com/flashbots/mev-inspect-py) repo
 

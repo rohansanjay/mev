@@ -1,6 +1,6 @@
-# math-446-mev
+# mev
 
-An analysis of MEV on the Ethereum network by Garret, Josh, Lia, Pad, and Rohan. 
+An analysis of MEV on the Ethereum network by Garret Nourse, Josh Garbuio, Lia Garrett, Padelis Deligiannis, and Rohan Sanjay. Check out our presentation [here](https://docs.google.com/presentation/d/1rjGLqzAC9AX6Zu7wz3HW_WnYiwd6P-zHn4CMNgsUalU/edit#slide=id.gf093013c0a_0_16)!
 
 ### Table of contents
 
@@ -33,18 +33,20 @@ An analysis of MEV on the Ethereum network by Garret, Josh, Lia, Pad, and Rohan.
 │       ├── punk_snipes.csv
 │       ├── swaps.csv
 │       └── transfers.csv
-└── notebooks
-    ├── Untitled.ipynb
-    ├── analysis
-    │   └── rohan.ipynb
-    └── data_extraction
-        ├── mev_api_data.ipynb
-        └── mev_inspect_data.ipynb
+├── notebooks
+│   ├── analysis
+│   │   ├── ML_models_MEV.ipynb
+│   │   ├── flashbots.ipynb
+│   │   └── mev_eth2.ipynb
+│   └── data_extraction
+│       ├── mev_api_data.ipynb
+│       └── mev_inspect_data.ipynb
+└── presentation.pdf
 ```
 
 Our [data folder](https://github.com/rohansanjay/math-446-mev/tree/main/data) contains CSV files of our data pulled from Flashbot's [mev-inspect](**mev-inspect-py**) and [mev-blocks API](https://docs.flashbots.net/flashbots-data/blockapi) data sources. Note that our mev-inspect data corresponds to all blocks mined on 2021-12-10 (0ver 7000 blocks) and our mev-blocks API data corresponds to the 10,000 most recent flashbots blocks as of 2021-12-13. 
 
-Our [notebooks](https://github.com/rohansanjay/math-446-mev/tree/main/notebooks) folder contains our code used to pull and analyze the data. 
+Our [notebooks](https://github.com/rohansanjay/math-446-mev/tree/main/notebooks) folder contains our code used to analyze the Flashbots data and MEV in ETH2. 
 
 ### Data sources
 

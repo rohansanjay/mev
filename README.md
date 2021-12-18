@@ -44,7 +44,7 @@ An analysis of MEV on the Ethereum network by Garret Nourse, Josh Garbuio, Lia G
 └── presentation.pdf
 ```
 
-Our [data folder](https://github.com/rohansanjay/math-446-mev/tree/main/data) contains CSV files of our data pulled from Flashbot's [mev-inspect](**mev-inspect-py**) and [mev-blocks API](https://docs.flashbots.net/flashbots-data/blockapi) data sources. Note that our mev-inspect data corresponds to all blocks mined on 2021-12-10 (0ver 7000 blocks) and our mev-blocks API data corresponds to the 10,000 most recent flashbots blocks as of 2021-12-13. 
+Our [data folder](https://github.com/rohansanjay/math-446-mev/tree/main/data) contains CSV files of our data pulled from Flashbot's [mev-inspect](https://docs.flashbots.net/flashbots-data/mev-inspect-py/overview) and [mev-blocks API](https://docs.flashbots.net/flashbots-data/blockapi) data sources. Note that our mev-inspect data corresponds to all blocks mined on 2021-12-10 (0ver 7000 blocks) and our mev-blocks API data corresponds to the 10,000 most recent Flashbots blocks as of 2021-12-13. 
 
 Our [notebooks](https://github.com/rohansanjay/math-446-mev/tree/main/notebooks) folder contains our code used to analyze the Flashbots data and MEV in ETH2. 
 
@@ -52,17 +52,17 @@ Our [notebooks](https://github.com/rohansanjay/math-446-mev/tree/main/notebooks)
 
 We pulled data from [Flashbots](https://docs.flashbots.net/), a research and development organization working on mitigating the negative externalities of current Maximal Extractable Value (from now on MEV) extraction techniques and avoiding the existential risks MEV could cause to state-rich blockchains like Ethereum.
 
-They offer two free services for MEV data: [mev-inspect](**mev-inspect-py**) and the [mev-blocks API](https://docs.flashbots.net/flashbots-data/blockapi).
+They offer two free services for MEV data: [mev-inspect](https://docs.flashbots.net/flashbots-data/mev-inspect-py/overview) and the [mev-blocks API](https://docs.flashbots.net/flashbots-data/blockapi).
 
 ### Using mev-inspect
 
-[mev-inspect](https://docs.flashbots.net/flashbots-data/mev-inspect-py/overview) is a Flashbots tool for analyzing historical mev activity on-chain, that finds miner payments, tokens transfers and profit, swaps and arbitrages, and more for any given block. The data is stored in a Postgres instance on a local Kubernetes cluster. To set up mev-insepct on your local machine, follow the instructions below: 
+[mev-inspect](https://docs.flashbots.net/flashbots-data/mev-inspect-py/overview) is a Flashbots tool for analyzing historical MEV activity on-chain that finds miner payments, tokens transfers and profit, swaps and arbitrages, and more for any given block. The data is stored in a Postgres instance on a local Kubernetes cluster. To set up mev-insepct on your local machine, follow the instructions below: 
 
 1. Clone the [mev-inspect-py](https://github.com/flashbots/mev-inspect-py) repo
 
-2. Follow the installation instructions in the repository [README](https://github.com/flashbots/mev-inspect-py#readme)
+2. Follow the installation instructions on the repository [README](https://github.com/flashbots/mev-inspect-py#readme)
 
-   1. Running the client requires a RPC_URL endpoint connection to a node on the Ethereum blockchain to fetch blocks, which can be setup for free through [Pokt Portal](https://www.portal.pokt.network/#1)'s"Ethereum Mainnet Archival with trace calls" host
+   1. Running the client requires a RPC_URL endpoint connection to a node on the Ethereum blockchain to fetch blocks, which can be setup for free through [Pokt Portal](https://www.portal.pokt.network/#1)'s "Ethereum Mainnet Archival with trace calls" host
 
 3. Note: when applying the database migrations for the first time, type "heads" instead of "head"
 
@@ -70,7 +70,7 @@ They offer two free services for MEV data: [mev-inspect](**mev-inspect-py**) and
 
 4. Happy inspecting and exploring!
 
-While it's a bit of a process to setup, the mev-inspect client is a phenomenal resource with a comprehensive variety of mev [data](https://docs.flashbots.net/flashbots-data/mev-inspect-py/exploring). Once blocks are inspected, the corresponding data is automatically stored in the Postgres instance database. You can connect to this database directly from the command line through the Kubernetes pod to query and explore the data. However, we wanted to conduct our analysis in Python, so we wrote a [script](https://github.com/rohansanjay/math-446-mev/blob/main/notebooks/data_extraction/mev_inspect_data.ipynb) to establish a connection  to the database from a python shell on a local machine, query all the data frames, and download them into CSV files on the host machine. 
+While it's a bit of a process to setup, the mev-inspect client is a phenomenal resource with a comprehensive variety of MEV data. Once blocks are inspected, the corresponding data is automatically stored in the Postgres instance database. You can connect to this database directly from the command line through the Kubernetes pod to query and explore the data. However, we wanted to conduct our analysis in Python, so we wrote a [script](https://github.com/rohansanjay/math-446-mev/blob/main/notebooks/data_extraction/mev_inspect_data.ipynb) to establish a connection  to the database from a python shell on a local machine, query all the data frames, and download them into CSV files on the host machine. 
 
 ### Using the mev-blocks API
 
@@ -82,7 +82,7 @@ The API is fairly easy to access and use with requests—our code to pull the 10
 
 MEV: Maximal (or miner) Extractable Value
 
-Front-running: when a miner steals a profitable opportunity (such as arbitrage) for themselves by sending the same transaction with a high gas price
+Front-running: when a miner steals a profitable opportunity (such as arbitrage) for themselves by sending the same transaction with a higher gas price
 
 Sandwiching: profiting off slippage in liquidity pools by buying and selling before and after large transactions posted in the mempool
 

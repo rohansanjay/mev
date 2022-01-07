@@ -1,6 +1,6 @@
 # mev
 
-An analysis of MEV on the Ethereum network by Garret Nourse, Josh Garbuio, Lia Garrett, Padelis Deligiannis, and Rohan Sanjay. Check out our presentation [here](https://docs.google.com/presentation/d/1rjGLqzAC9AX6Zu7wz3HW_WnYiwd6P-zHn4CMNgsUalU/edit#slide=id.gf093013c0a_0_16)!
+An analysis of Maximal Extractable Value (MEV) on the Ethereum network by Garret Nourse, Josh Garbuio, Lia Garrett, Padelis Deligiannis, and Rohan Sanjay. Check out our presentation [here](https://docs.google.com/presentation/d/1rjGLqzAC9AX6Zu7wz3HW_WnYiwd6P-zHn4CMNgsUalU/edit#slide=id.gf093013c0a_0_16)!
 
 ### Table of contents
 
